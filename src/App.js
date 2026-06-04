@@ -1,12 +1,27 @@
+/**
+ * Wanderlust Travel Agency - Main Application Component
+ * 
+ * This component serves as the entry point for the Travel Agency website.
+ * It utilizes React-Bootstrap for responsive design and layout.
+ */
+
 import React from 'react';
+// Importing Bootstrap CSS for styling
 import 'bootstrap/dist/css/bootstrap.min.css';
+// Importing necessary React-Bootstrap components
 import { Navbar, Nav, Container, Card, Row, Col, Carousel, Form, Button } from 'react-bootstrap';
 
 function App() {
   return (
+    /**
+     * React.Fragment is used to group a list of children without adding extra nodes to the DOM.
+     * The div with className "App" acts as the main wrapper for the application.
+     */
     <React.Fragment>
       <div className="App">
-        {/* Navbar */}
+        
+        {/* --- NAVIGATION BAR SECTION --- */}
+        {/* sticky="top" ensures the navbar stays at the top while scrolling */}
         <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
           <Container>
             <Navbar.Brand href="#home">Wanderlust Travel Agency</Navbar.Brand>
@@ -21,15 +36,17 @@ function App() {
           </Container>
         </Navbar>
 
-        {/* Heading */}
+        {/* --- HERO HEADING SECTION --- */}
         <Container className="mt-5 text-center">
           <h1 className="display-4 fw-bold">Explore the World with Wanderlust</h1>
           <p className="lead text-muted">Your journey begins here. Discover breathtaking destinations and create unforgettable memories.</p>
         </Container>
 
-        {/* Carousel */}
+        {/* --- CAROUSEL SECTION --- */}
+        {/* fade prop provides a cross-fade transition between slides */}
         <Container className="my-5">
           <Carousel fade>
+            {/* Carousel Item 1: Exotic Getaways */}
             <Carousel.Item interval={3000}>
               <img
                 className="d-block w-100"
@@ -42,6 +59,8 @@ function App() {
                 <p>Find your paradise in the most remote corners of the world.</p>
               </Carousel.Caption>
             </Carousel.Item>
+            
+            {/* Carousel Item 2: Urban Adventures */}
             <Carousel.Item interval={3000}>
               <img
                 className="d-block w-100"
@@ -54,6 +73,8 @@ function App() {
                 <p>Explore the rich history and culture of Europe's iconic cities.</p>
               </Carousel.Caption>
             </Carousel.Item>
+            
+            {/* Carousel Item 3: Ancient Wonders */}
             <Carousel.Item interval={3000}>
               <img
                 className="d-block w-100"
@@ -69,10 +90,11 @@ function App() {
           </Carousel>
         </Container>
 
-        {/* Destination Cards */}
+        {/* --- POPULAR DESTINATIONS (CARDS) SECTION --- */}
         <Container id="destinations" className="my-5">
           <h2 className="text-center mb-4">Popular Destinations</h2>
           <Row>
+            {/* Card 1: Paris */}
             <Col md={4} className="mb-4">
               <Card className="h-100 shadow-sm">
                 <Card.Img variant="top" src="/assets/MGI6z68xYy1q.jpg" style={{ height: '200px', objectFit: 'cover' }} />
@@ -85,6 +107,8 @@ function App() {
                 </Card.Body>
               </Card>
             </Col>
+            
+            {/* Card 2: Santorini */}
             <Col md={4} className="mb-4">
               <Card className="h-100 shadow-sm">
                 <Card.Img variant="top" src="/assets/XzEyojxQWhV8.jpg" style={{ height: '200px', objectFit: 'cover' }} />
@@ -97,6 +121,8 @@ function App() {
                 </Card.Body>
               </Card>
             </Col>
+            
+            {/* Card 3: Bali */}
             <Col md={4} className="mb-4">
               <Card className="h-100 shadow-sm">
                 <Card.Img variant="top" src="/assets/saNMJIU7bPN7.jpg" style={{ height: '200px', objectFit: 'cover' }} />
@@ -112,24 +138,27 @@ function App() {
           </Row>
         </Container>
 
-        {/* Contact Form */}
+        {/* --- CONTACT FORM SECTION --- */}
         <Container id="contact" className="my-5 p-5 bg-light rounded shadow-sm">
           <h2 className="text-center mb-4">Contact Us</h2>
           <Form>
             <Row>
               <Col md={6}>
+                {/* Name Input */}
                 <Form.Group className="mb-3" controlId="formName">
                   <Form.Label>Name</Form.Label>
                   <Form.Control type="text" placeholder="Enter your name" />
                 </Form.Group>
               </Col>
               <Col md={6}>
+                {/* Email Input */}
                 <Form.Group className="mb-3" controlId="formEmail">
                   <Form.Label>Email address</Form.Label>
                   <Form.Control type="email" placeholder="Enter email" />
                 </Form.Group>
               </Col>
             </Row>
+            {/* Message Input */}
             <Form.Group className="mb-3" controlId="formMessage">
               <Form.Label>Message</Form.Label>
               <Form.Control as="textarea" rows={4} placeholder="How can we help you?" />
@@ -142,7 +171,7 @@ function App() {
           </Form>
         </Container>
 
-        {/* Footer */}
+        {/* --- FOOTER SECTION --- */}
         <footer className="bg-dark text-white py-4 mt-5">
           <Container className="text-center">
             <p>&copy; 2026 Wanderlust Travel Agency. All rights reserved.</p>
@@ -153,6 +182,7 @@ function App() {
             </Nav>
           </Container>
         </footer>
+        
       </div>
     </React.Fragment>
   );
