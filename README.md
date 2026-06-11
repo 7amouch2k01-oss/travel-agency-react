@@ -50,4 +50,4 @@ The app will be available at \`http://localhost:3000\`.
 This project is licensed under the MIT License.
 
 ---
-*Created with ❤️ by Manus for a React Checkpoint.*
+*Created for a React Checkpoint.*
